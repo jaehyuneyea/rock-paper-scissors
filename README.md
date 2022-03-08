@@ -1,1 +1,2 @@
 # rock-paper-scissors
+<p>In this project I will be using vanilla JavaScript to create a game that challenges the game in a classic game of rock paper scissors. For now, the game will be done purely in the console, however I will come back to it later to add GUI elements.</p>

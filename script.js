@@ -1,3 +1,4 @@
+// randomly computes a choice of the three and returns the choice
 function computerPlay() {
   let rand = Math.floor((Math.random()* 3)); // choose a random number between 0 and 2
   let choice;
@@ -14,6 +15,7 @@ function computerPlay() {
   return choice;
 }
 
+// plays a single round of rock paper scissors given the choice of both the player and the computer.
 function playRound(playerSelection, computerSelection) {
   let playerCase = playerSelection.toLowerCase();
   console.log(playerCase);
@@ -42,7 +44,7 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 }
-
+// prompts user for a choice and runs playRound 5 times and accepts only valid input
 function game() {
   for (let i = 0; i < 5; i++) {
     let playerSelection = prompt("Choose rock, paper or scissors").toLowerCase();

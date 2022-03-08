@@ -1,5 +1,5 @@
 function computerPlay() {
-  let rand = Math.floor((Math.random()* 3));
+  let rand = Math.floor((Math.random()* 3)); // choose a random number between 0 and 2
   let choice;
   switch(rand) {
     case 0:
@@ -11,5 +11,31 @@ function computerPlay() {
     case 2:
       choice = "scissors";
   }
-  console.log(choice);
+  return choice;
+}
+
+function playRound(playerSelection, computerSelection) {
+  let playerCase = playerSelection.toLowerCase();
+  console.log(playerCase);
+  let winState;
+
+  if (playerCase == computerSelection) { // tie case is when both selections are just equal
+    winState = `It's a tie! ${playerCase} ties with ${computerSelection}`; // we store the game result string in a variable
+    return winState;
+  } else {
+    switch (playerCase) { // check the cases in a switch statement for all possible values
+      case "rock":
+        (computerSelection == "scissors") ? winState = `You win! ${playerCase} beats ${computerSelection}` : 
+        winState = `You lose! ${computerSelection} beats ${playerCase}`; // win if scissors, lose if paper
+        return winState;
+      case "paper":
+        (computerSelection == "rock") ? winState = `You win! ${playerCase} beats ${computerSelection}` : 
+        winState = `You lose! ${computerSelection} beats ${playerCase}`;
+        return winState;
+      case "scissors":
+        (computerSelection == "paper") ? winState = `You win! ${playerCase} beats ${computerSelection}` : 
+        winState = `You lose! ${computerSelection} beats ${playerCase}`;
+        return winState;
+    }
+  }
 }

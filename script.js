@@ -36,6 +36,20 @@ function playRound(playerSelection, computerSelection) {
         (computerSelection == "paper") ? winState = `You win! ${playerCase} beats ${computerSelection}` : 
         winState = `You lose! ${computerSelection} beats ${playerCase}`;
         return winState;
+      default:
+        winState = "Choose a valid choice!";
+        return winState;
     }
+  }
+}
+
+function game() {
+  for (let i = 0; i < 5; i++) {
+    let playerSelection = prompt("Choose rock, paper or scissors").toLowerCase();
+    let computerSelection = computerPlay();
+    let result = playRound(playerSelection, computerSelection);
+    (result == "Choose a valid choice!") ? i -= 1 : i; // ensures that 5 valid inputs are made 
+    console.log(result);
+
   }
 }

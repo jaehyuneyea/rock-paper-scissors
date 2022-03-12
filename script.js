@@ -70,3 +70,17 @@ rock.addEventListener('click', () => {
   let computerSelection = computerPlay();
   playRound(playerSelection,computerSelection);
 });
+
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {
+  let playerSelection = 'paper';
+  let computerSelection = computerPlay();
+  playRound(playerSelection,computerSelection);
+});
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {
+  let playerSelection = 'scissors';
+  let computerSelection = computerPlay();
+  playRound(playerSelection,computerSelection);
+});

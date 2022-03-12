@@ -15,6 +15,9 @@ function computerPlay() {
   return choice;
 }
 
+// clicking a button triggers playround with chosen input of the three
+
+
 // plays a single round of rock paper scissors given the choice of both the player and the computer.
 function playRound(playerSelection, computerSelection) {
   let playerCase = playerSelection.toLowerCase();
@@ -45,13 +48,13 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 // prompts user for a choice and runs playRound 5 times and accepts only valid input
-function game() {
-  for (let i = 0; i < 5; i++) {
-    let playerSelection = prompt("Choose rock, paper or scissors").toLowerCase();
-    let computerSelection = computerPlay();
-    let result = playRound(playerSelection, computerSelection);
-    (result == "Choose a valid choice!") ? i -= 1 : i; // ensures that 5 valid inputs are made 
-    console.log(result);
+// function game() {
+//   for (let i = 0; i < 5; i++) {
+//     let playerSelection = prompt("Choose rock, paper or scissors").toLowerCase();
+//     let computerSelection = computerPlay();
+//     let result = playRound(playerSelection, computerSelection);
+//     (result == "Choose a valid choice!") ? i -= 1 : i; // ensures that 5 valid inputs are made 
+//     console.log(result);
 
-  }
-}
+//   }
+// }

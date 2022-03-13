@@ -24,53 +24,62 @@ function computerPlay() {
 // plays a single round of rock paper scissors given the choice of both the player and the computer.
 function playRound(playerSelection, computerSelection) {
   let playerCase = playerSelection.toLowerCase();
-  console.log(playerCase);
-  console.log(computerSelection);
   let winState;
 
   if (playerCase == computerSelection) { // tie case is when both selections are just equal
     winState = `It's a tie! ${playerCase} ties with ${computerSelection}`; // we store the game result string in a variable
-    updateVictory(winState);
+    update(winState);
   } else {
     switch (playerCase) { // check the cases in a switch statement for all possible values
       case "rock":
         (computerSelection == "scissors") ? winState = `You win! ${playerCase} beats ${computerSelection}` : 
         winState = `You lose! ${computerSelection} beats ${playerCase}`; // win if scissors, lose if paper
-        updateVictory(winState);
+        update(winState);
         break;
       case "paper":
         (computerSelection == "rock") ? winState = `You win! ${playerCase} beats ${computerSelection}` : 
         winState = `You lose! ${computerSelection} beats ${playerCase}`;
-        updateVictory(winState);
+        update(winState);
         break;
       case "scissors":
         (computerSelection == "paper") ? winState = `You win! ${playerCase} beats ${computerSelection}` : 
         winState = `You lose! ${computerSelection} beats ${playerCase}`;
-        updateVictory(winState);
+        update(winState);
     }
   }
 }
 
-function updateVictory(winState) {
+/**
+ * Called from the playRound function where winState is the message
+ * passed in to display to the user.
+ * Additionally updates the score each round and calls endGame if 
+ * either score has reached 5.
+ */
+function update(winState) {
 
-  let vicState = winState.split(' ').slice(0,2).join(' ');
-  console.log(vicState);
-  desc.textContent = winState;
-  if (vicState === 'You win!') playerScore++;
+  let vicState = winState.split(' ').slice(0,2).join(' '); // parses the first two words of the winState message
+
+  desc.textContent = winState; // updates the message to the user
+
+  if (vicState === 'You win!') playerScore++; // checks the first two words and updates score accordingly
   if (vicState === 'You lose!') cpuScore++;
-  console.log(playerScore);
-  console.log(cpuScore);
 
+  // if either player has reached 5 points, call endGame with result
   if (playerScore == 5) {
     endGame('win');
   } else if (cpuScore == 5) {
     endGame('lose');
   }
 
+  // update UI representation of the score
   ps.textContent = playerScore;
   cs.textContent = cpuScore;
 }
 
+/**
+ * receives result, and determines whether the game is won or lost and 
+ * displays message to the user and resets score to 0.
+ */
 function endGame(result) {
   if (result == 'win') {
     desc.textContent = 'Game over! You win!';
@@ -80,16 +89,6 @@ function endGame(result) {
   playerScore = 0;
   cpuScore = 0;
 }
-
-// prompts user for a choice and runs playRound 5 times and accepts only valid input
-// function game() {
-//     let playerSelection = prompt("Choose rock, paper or scissors").toLowerCase();
-//     let computerSelection = computerPlay();
-//     let result = playRound(playerSelection, computerSelection);
-//     console.log(result);
-// }
-
-
 
 const container = document.querySelector('.container');
 

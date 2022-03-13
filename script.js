@@ -1,3 +1,6 @@
+let cpuScore = 0;
+let playerScore = 0;
+
 // randomly computes a choice of the three and returns the choice
 function computerPlay() {
   let rand = Math.floor((Math.random()* 3)); // choose a random number between 0 and 2
@@ -49,9 +52,33 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function updateVictory(winState) {
-  // stub
-  let desc = document.querySelector('#description');
+
+  let vicState = winState.split(' ').slice(0,2).join(' ');
+  console.log(vicState);
   desc.textContent = winState;
+  if (vicState === 'You win!') playerScore++;
+  if (vicState === 'You lose!') cpuScore++;
+  console.log(playerScore);
+  console.log(cpuScore);
+
+  if (playerScore == 5) {
+    endGame('win');
+  } else if (cpuScore == 5) {
+    endGame('lose');
+  }
+
+  ps.textContent = playerScore;
+  cs.textContent = cpuScore;
+}
+
+function endGame(result) {
+  if (result == 'win') {
+    desc.textContent = 'Game over! You win!';
+  } else if (result == 'lose') {
+    desc.textContent = 'Game over! You lose!';
+  }
+  playerScore = 0;
+  cpuScore = 0;
 }
 
 // prompts user for a choice and runs playRound 5 times and accepts only valid input
@@ -62,7 +89,16 @@ function updateVictory(winState) {
 //     console.log(result);
 // }
 
-const container = document.querySelector('.container')
+
+
+const container = document.querySelector('.container');
+
+const ps = document.querySelector('#playerScore');
+const cs = document.querySelector('#cpuScore');
+const desc = document.querySelector('#description');
+
+ps.textContent = playerScore;
+cs.textContent = cpuScore;
 
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {

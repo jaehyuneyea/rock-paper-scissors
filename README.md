@@ -16,4 +16,5 @@
   slowly to build more suspense, display what the cpu has actually chosen, etc.</p>
   <p>I'm mostly happy with the way I've structured the code. It's much more cleaner than the GUI experience I've had with building my Java project
   and I've done my best to reduce repeated code. One thing that I do note is that my way of determining the winner (endGame and update function) is not very future friendly. Since the function looks for the word 'You win' as the first two words its argument, if I wanted to the message later on, it's something that I would also have to reflect the changes to in other parts of the code.</p>
+  <p>Time to add style!</p>
 </div>

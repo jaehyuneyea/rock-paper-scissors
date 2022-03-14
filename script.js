@@ -82,9 +82,9 @@ function update(winState) {
  */
 function endGame(result) {
   if (result == 'win') {
-    desc.textContent = 'Game over! You win!';
+    desc.textContent = `Game over! You win ${playerScore} to ${cpuScore}`;
   } else if (result == 'lose') {
-    desc.textContent = 'Game over! You lose!';
+    desc.textContent = `Game over! You lose ${playerScore} to ${cpuScore}`;
   }
   playerScore = 0;
   cpuScore = 0;

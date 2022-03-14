@@ -26,6 +26,8 @@ function playRound(playerSelection, computerSelection) {
   let playerCase = playerSelection.toLowerCase();
   let winState;
 
+  actionPane.textContent = `The CPU selected ${computerSelection}!`;
+
   if (playerCase == computerSelection) { // tie case is when both selections are just equal
     winState = `It's a tie! ${playerCase} ties with ${computerSelection}`; // we store the game result string in a variable
     update(winState);
@@ -95,6 +97,7 @@ const container = document.querySelector('.container');
 const ps = document.querySelector('#playerScore');
 const cs = document.querySelector('#cpuScore');
 const desc = document.querySelector('#description');
+const actionPane = document.querySelector('.action-pane');
 
 ps.textContent = playerScore;
 cs.textContent = cpuScore;

@@ -90,6 +90,7 @@ function endGame(result) {
   }
   playerScore = 0;
   cpuScore = 0;
+  actionPane.textContent = '';
 }
 
 const container = document.querySelector('.container');

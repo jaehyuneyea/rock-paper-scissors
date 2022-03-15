@@ -1,0 +1,80 @@
+body {
+  background-color: rgb(250, 255, 208);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.action-pane {
+  height: 50px;
+  font-weight: 600;
+  font-size: 24px;
+  color:rgb(2, 50, 78);
+}
+
+.score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-weight: bolder;
+  font-size: 112px;
+  color:rgb(9, 84, 128);
+  width: 100%;
+}
+
+.status {
+  font-weight: 600;
+  font-size: 48px;
+  color:rgb(2, 50, 78);
+  min-width: 300px;
+}
+
+.rps {
+  display:flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+#rock {
+  display:block;
+  border-radius: 50%;
+  height: 235px;
+  width: auto;
+  object-fit: none;
+  border:10px solid rgb(2, 50, 78);
+  transition: 0.3s
+}
+
+#rock:hover {
+  border: 15px solid rgb(205, 233, 50);
+}
+
+#paper {
+  border-radius: 100%;
+  height: 235px;
+  width: auto;
+  object-fit: none;
+  border:10px solid rgb(2, 50, 78);
+  transition: 0.3s;
+}
+
+#paper:hover {
+  border: 15px solid rgb(205, 233, 50);
+}
+
+#scissors {
+  border-radius: 100%;
+  height: 235px;
+  width: auto;
+  object-fit: none;
+  border:10px solid rgb(2, 50, 78);
+  transition: 0.3s;
+}
+
+#scissors:hover {
+  border: 15px solid rgb(205, 233, 50);
+}

@@ -108,6 +108,7 @@ rock.addEventListener('click', () => {
   let playerSelection = 'rock';
   let computerSelection = computerPlay();
   playRound(playerSelection,computerSelection);
+  rock.classList.add('clicked');
 });
 
 const paper = document.querySelector('#paper');

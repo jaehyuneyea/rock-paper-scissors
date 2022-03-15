@@ -18,3 +18,20 @@
   and I've done my best to reduce repeated code. One thing that I do note is that my way of determining the winner (endGame and update function) is not very future friendly. Since the function looks for the word 'You win' as the first two words its argument, if I wanted to the message later on, it's something that I would also have to reflect the changes to in other parts of the code.</p>
   <p>Time to add style!</p>
 </div>
+<div>
+<p>3/14 2022: Finished styling the game! The additions I made are:</p>
+  <ul>
+    <li>Image buttons that react and grow on hover</li>
+    <li>Font and background color additions</li>
+    <li>Flexbox alignment and centering properties to space out elements</li>
+    <li>Buttons and other parts of the page grow and shrink according to the size of the window</li>
+  </ul>
+<p>Some thing that I want to try and do is immitate a button press upon the mouse being pressed down.</p>
+</div>
+
+<p>For the most part, this project is finished. Some trouble that I had while I had making this and what I learned from it were:</p>
+<ul>
+  <li>Anonymous functions. I'm still working to understand them fully but initially I had no idea that why I needed them for eventlisteners and why they wouldn't take a function that took parameters.</li>
+  <li>Aligning the score. Initially when styling the score at the top they stayed glued to eachother despite applying flex. I fixed this by setting width to 100% to fill the entire container.</li>
+  <li>Aligning the images and their right border. The images I downloaded all came in different sizes and slightly different from the other. It was hard to try and make all of the identical using CSS- I didn't know how to have the image while cropping some contents of the image- so I looked it up and came up with a solution of using object-fit: none.</li>
+</ul>
